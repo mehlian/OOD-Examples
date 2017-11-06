@@ -19,7 +19,7 @@ namespace CoinFlipGame
 
         public void StartGame()
         {
-            int randIndex = new Random().Next(0, 1);
+            int randIndex = new Random().Next(0, 2);
             string playersPick = players[randIndex].GetRandCoinOption();
 
             int opponentsIndex = (randIndex == 0) ? 1 : 0;

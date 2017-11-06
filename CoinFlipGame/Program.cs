@@ -10,13 +10,11 @@ namespace CoinFlipGame
     {
         public static void Main(string[] args)
         {
-            CoinGame theCoinGame = new CoinGame("Mark", "Tom");
-
             string usersAnswer;
 
             do
             {
-                theCoinGame.StartGame();
+                new CoinGame("Mark", "Tom").StartGame();
 
                 Console.WriteLine("Play Again?");
                 usersAnswer = Console.ReadLine();

@@ -13,7 +13,7 @@ namespace CoinFlipGame
 
         public Coin()
         {
-            coinOption = coinValue[new Random().Next(0, 1)];
+            coinOption = coinValue[new Random().Next(0, 2)];
         }
 
         public string GetCoinOption()

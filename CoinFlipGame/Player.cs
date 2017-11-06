@@ -30,7 +30,7 @@ namespace CoinFlipGame
 
         public string GetRandCoinOption()
         {
-            return coinOption = coinValue[new Random().Next(0, 1)];
+            return coinOption = coinValue[new Random().Next(0, 2)];
         }
 
         public void DidPlayerWin(string winningFlip)
