@@ -20,18 +20,7 @@ namespace CoinFlipGame
                 usersAnswer = Console.ReadLine();
 
 
-            } while (String.Compare(usersAnswer,"y",true)==0);
+            } while (String.Compare(usersAnswer, "y", true) == 0);
         }
-
-        static void Esse(IEnumerable<int> enumerator)
-        {
-            var a = enumerator.GetEnumerator();
-        }
-    }
-    static class TestStat
-    {
-
-
-
     }
 }
