@@ -42,15 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coin.cs" />
-    <Compile Include="CoinGame.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Documentation\Object Oriented Design - Przykład.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoinGameLib\CoinGameLib.csproj">
+      <Project>{34bd35f7-dccf-4728-8019-a77dbdcafd30}</Project>
+      <Name>CoinGameLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,24 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CoinGameLib;
 
 namespace CoinFlipGame
 {
-    class Program
+    public class Program
     {
         public static void Main(string[] args)
         {
-            string usersAnswer;
-
-            do
-            {
-                new CoinGame("Mark", "Tom").StartGame();
-
-                Console.WriteLine("Play Again?");
-                usersAnswer = Console.ReadLine();
-
-
-            } while (String.Compare(usersAnswer, "y", true) == 0);
+            new CoinGame().StartGame();
         }
     }
 }
