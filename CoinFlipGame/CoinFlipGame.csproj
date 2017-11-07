@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Documentation\Object Oriented Design - Przykład.docx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoinGameLib\CoinGameLib.csproj">

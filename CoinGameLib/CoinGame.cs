@@ -15,7 +15,7 @@ namespace CoinGameLib
         {
             players[0] = new PlayerModel();
             players[1] = new PlayerModel();
-            theCoin = new CoinModel();
+
             string key = String.Empty;
 
             ShowGameRules();
@@ -88,6 +88,7 @@ namespace CoinGameLib
 
         private void ShowResults()
         {
+            theCoin = new CoinModel();
             CoinState tossResult = theCoin.GetCoinOption();
             Console.WriteLine($"Result: {tossResult.ToString()}!");
 
