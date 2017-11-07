@@ -16,6 +16,9 @@ namespace CoinGameLib
         /// </summary>
         public void StartGame()
         {
+            players[0] = new PlayerModel();
+            players[1] = new PlayerModel();
+            theCoin = new CoinModel();
             string key = String.Empty;
 
             ShowGameRules();
@@ -25,8 +28,8 @@ namespace CoinGameLib
             {
                 SetCoinOption();
                 ShowResults();
-                Console.WriteLine("Play again? Press Y for Yes.");
-                key = Console.ReadKey().ToString();
+                Console.WriteLine("\nPlay again? Press Y for Yes.");
+                key = Console.ReadKey().KeyChar.ToString();
             } while (String.Compare(key, "Y", true) == 0);
 
             Console.WriteLine("Goodbye!");
@@ -36,21 +39,22 @@ namespace CoinGameLib
         {
             Console.WriteLine("Welcome in Coin Game!");
             Console.WriteLine("Rules:");
-            Console.WriteLine("1. Two players guess Coin side.");
-            Console.WriteLine("2. The Coin is flipped.");
-            Console.WriteLine("3. Correct guess wins.");
+            Console.WriteLine("1. One player guess Coin's side, other gets opposite.");
+            Console.WriteLine("2. The Coin is tossed.");
+            Console.WriteLine("3. If player picked correct side - wins,");
+            Console.WriteLine("   if not, his opponent wins.");
             Console.WriteLine("---------------------------------");
         }
 
         private void SetPlayerName()
         {
-            for (int i = 1; i <= players.Count(); i++)
+            for (int i = 0; i < players.Count(); i++)
             {
                 string name = String.Empty;
 
                 do
                 {
-                    Console.WriteLine($"Please enter name for player {i}: ");
+                    Console.WriteLine($"Please enter name for player {i + 1}: ");
                     name = Console.ReadLine();
                 } while (name.Length == 0);
 
@@ -67,17 +71,17 @@ namespace CoinGameLib
 
             do
             {
-                Console.WriteLine($"{players[playerIndex].Name}, select coin's side by pressing:");
+                Console.WriteLine($"\n{players[playerIndex].Name}, select coin's side by pressing");
                 Console.WriteLine("H for Heads or T for Tails.");
 
-                string input = Console.ReadKey().ToString();
+                string input = Console.ReadKey().KeyChar.ToString();
 
                 if (String.Compare(input, "H", true) == 0)
                     coinOption = CoinState.Heads;
                 else if (String.Compare(input, "T", true) == 0)
                     coinOption = CoinState.Tails;
                 else
-                    Console.WriteLine("Wrong key, please try again.");
+                    Console.WriteLine("\nWrong key, please try again.");
 
             } while (coinOption == CoinState.None);
 
@@ -88,7 +92,7 @@ namespace CoinGameLib
         private void ShowResults()
         {
             CoinState tossResult = theCoin.GetCoinOption();
-            Console.WriteLine($"Toss result: {tossResult.ToString()}");
+            Console.WriteLine($"Result: {tossResult.ToString()}!");
 
             if (players[0].DidPlayerWin(tossResult))
             {
