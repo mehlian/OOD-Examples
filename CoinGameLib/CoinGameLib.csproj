@@ -40,10 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoinGame.cs" />
-    <Compile Include="CoinModel.cs" />
-    <Compile Include="CoinState.cs" />
-    <Compile Include="PlayerModel.cs" />
+    <Compile Include="Interfaces\ICoinGame.cs" />
+    <Compile Include="Logic\CoinGame.cs" />
+    <Compile Include="Logic\CoinModel.cs" />
+    <Compile Include="Logic\CoinState.cs" />
+    <Compile Include="Logic\PlayerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

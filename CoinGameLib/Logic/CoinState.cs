@@ -1,8 +1,7 @@
 ﻿namespace CoinGameLib
 {
-    internal enum CoinState
+    public enum CoinState
     {
-        None,
         Heads,
         Tails
     }
