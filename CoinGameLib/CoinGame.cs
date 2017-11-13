@@ -89,6 +89,8 @@ namespace CoinGameLib
         private void ShowResults()
         {
             theCoin = new CoinModel();
+
+            Console.WriteLine("\n\nTossing the coin...");
             CoinState tossResult = theCoin.GetCoinOption();
             Console.WriteLine($"Result: {tossResult.ToString()}!");
 
